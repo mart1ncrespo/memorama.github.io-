@@ -4,10 +4,12 @@
 }
 .container{
     display: grid;
-    grid-template-rows:5em repeat(2,2fr) 10%;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
+    grid-template-rows:5em max-content 1em;
+    align-items: end;
+    height: 100vh;
+    /* 
+    width: 100%; */
+    /* margin: 0 auto; */
 }
 
 .informacion{
@@ -17,6 +19,7 @@
     background-color: #79B4B7;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 /* #informacion_datos{
     display: flex;
@@ -25,7 +28,7 @@
 } */
 .tablero{
     height: auto;
-    grid-row: 2/4;
+    grid-row: 2/3;
 }
 #tablero_cartas{
     display: flex;
@@ -41,8 +44,9 @@
     margin: 2em 6em;
 }
 .pie_pagina{
-    grid-row: 4/5;
+    grid-row: 3/4;
     background-color: #F8F0DF;
+    height: 100%;
 }
 .carta{
     /* grid-row: 1;
@@ -78,12 +82,16 @@
 @media only screen and (max-width: 420px){
     .container{
         margin: 0;
-        row-gap:unset;
+        /* row-gap:unset; */
     }
     .carta{
         width: calc(100% / 3);
         height: 6em;
     }
+    .tablero{
+        min-height: 100vh;
+    }
+    
     #tablero_cartas{
         margin: 2em 0;
         width: 100%;
