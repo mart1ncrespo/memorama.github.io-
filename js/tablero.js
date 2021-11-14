@@ -116,7 +116,7 @@ function compararImagen(params) {
                     animal1 = {}
                     oculta2 = {}
                     animal2 = {}
-                    ganador();
+                    setTimeout(ganador,1000);
                     
                     // console.log('iguales')
                 }else{
