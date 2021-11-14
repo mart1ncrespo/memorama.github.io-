@@ -31,6 +31,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    /* align-content: space-around; */
     /* grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(3,1fr); */
     /* column-gap: 20px;
@@ -44,61 +45,14 @@
     background-color: #F8F0DF;
 }
 .carta{
-    grid-row: 1;
-    grid-column: 2;
+    /* grid-row: 1;
+    grid-column: 2; */
     /* background-image: url("../img/question.png"); */
     height: 10em;
     width: calc(100% / 4);
     margin: 10px auto;
 }
-/* #c1{
-    grid-row: 1;
-    grid-column: 1;
-} */
-/* #c2{
-    grid-row: 1;
-    grid-column: 2;
-}
-#c3{
-    grid-row: 1;
-    grid-column: 3;
-}
-#c4{
-    grid-row: 1;
-    grid-column: 4;
-}
-#c5{
-    grid-row: 2;
-    grid-column: 1;
-}
-#c6{
-    grid-row: 2;
-    grid-column: 2;
-}
-#c7{
-    grid-row: 2;
-    grid-column: 3;
-}
-#c8{
-    grid-row: 2;
-    grid-column: 4;
-}
-#c9{
-    grid-row: 3;
-    grid-column: 1;
-}
-#c10{
-    grid-row: 3;
-    grid-column: 2;
-}
-#c11{
-    grid-row: 3;
-    grid-column: 3;
-}
-#c12{
-    grid-row: 3;
-    grid-column: 4;
-} */
+
 .imagenVisible{
     height: 100%;
     margin: 0 auto;
@@ -113,5 +67,37 @@
     display: none;
     /* position: relative; */
     visibility: hidden;
+}
+/* ////////////////////////////////////////////////////////////////////// */
+/* VISTA MOBIL */
+@media only screen and (min-width: 420px){
+    /* .nav-barra .mobil{
+        visibility: hidden;
+    } */
+}
+@media only screen and (max-width: 420px){
+    .container{
+        margin: 0;
+        row-gap:unset;
+    }
+    .carta{
+        width: calc(100% / 3);
+        height: 6em;
+    }
+    #tablero_cartas{
+        margin: 2em 0;
+        width: 100%;
+        /* row-gap: 20px; */
+        /* justify-content: space-around; */
+        justify-content: center;
+        align-content: space-around;
+        /* align-content: space-around; */
+        /* grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,1fr); */
+        /* column-gap: 20px;
+        /* justify-items: stretch;
+        align-items: stretch; */
+        /* margin: 2em 6em; */
+    }
 }
     
