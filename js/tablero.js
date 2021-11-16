@@ -21,7 +21,7 @@ var animal1= {}
 var oculta2 = {}
 var animal2 = {}
 var puntaje = 0
-var movimientos = 0
+var movimientos = 8
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -108,6 +108,9 @@ function compararImagen(params) {
             // animal2.classList.replace('imagenOculta','imagenVisible')
         }
         if (img1 != '') {
+            movimientos--
+            let mov = document.getElementById('movimientos');
+            mov.innerText = movimientos;
             img2 = animal2.src.slice(35);
                 if (img1 == img2) {
                     img1 = ''
@@ -123,6 +126,7 @@ function compararImagen(params) {
                     img1 = '';
                     img2 = '';
                     setTimeout(function(){ocultarImagen(oculta1,animal1,oculta2,animal2)},1000)
+                    setTimeout(perdedor,1000);
                     // oculta1.classList.replace('imagenOculta','imagenVisible');
                     // animal1.classList.replace('imagenVisible','imagenOculta');
                     // oculta2.classList.replace('imagenOculta','imagenVisible');
@@ -170,20 +174,41 @@ function resetearTablero(params) {
     cartaTablero.removeChild(tableroCartas);
     // cartaTablero.parentNode.removeChild(tableroCartas);
     // tablero.parentNode.removeChild(cartaTablero)
-    console.log('ejecutado')
+    // console.log('ejecutado')
 
 }
 
 function ganador() {
+    let valorPuntos = document.getElementById('puntaje');
+    // console.log(valorPuntos)
     puntaje++ 
+    valorPuntos.innerText = puntaje
     if (puntaje == 6) {
         alert('Felicidades, has ganado')
+        resetPuntaje()
         resetearTablero();
         llenarTabla();
     }else{
-        console.log(puntaje)
     }
 }
+function perdedor() {
+    // movimientos++
+    let limiteMovimientos = movimientos/2
+    if (movimientos == 0) {
+        alert('Perdiste! :c')
+        resetPuntaje();
+        resetearTablero();
+        llenarTabla();    
+    }
+}
+function resetPuntaje() {
+    let valorPuntos = document.getElementById('puntaje');
+    let valorMovimientos = document.getElementById('movimientos');
+
+    valorPuntos.innerText = '0'
+    valorMovimientos.innerText = '0'
+}
+
 
 
 llenarTabla();

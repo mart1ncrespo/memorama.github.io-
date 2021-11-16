@@ -21,11 +21,16 @@
     justify-content: center;
     align-items: center;
 }
-/* #informacion_datos{
+/* .informacion_datos */
+#informacion_datos{
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-items: center;
-} */
+}
+#informacion_datos table{
+    padding-left: 2em;
+}
 .tablero{
     height: auto;
     grid-row: 2/3;
@@ -72,6 +77,13 @@
     display: none;
     /* position: relative; */
     visibility: hidden;
+}
+#puntaje,#movimientos{
+    /* font-family: 'Press Start 2P'; */
+    text-align: center;
+    border: 1px solid black;
+    font-size: 1.5em;
+    /* margin-left: 2em; */
 }
 /* ////////////////////////////////////////////////////////////////////// */
 /* VISTA MOBIL */
