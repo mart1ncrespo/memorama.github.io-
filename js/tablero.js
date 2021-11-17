@@ -97,20 +97,13 @@ function compararImagen(params) {
             oculta1 = params.target
 
             descubrirImagen(oculta1,animal1);
-            // oculta1.classList.replace('imagenVisible','imagenOculta')
-            // animal1.classList.replace('imagenOculta','imagenVisible')
         }else {
             animal2 = params.target.nextElementSibling
             oculta2 = params.target
 
             descubrirImagen(oculta2, animal2);
-            // oculta2.classList.replace('imagenVisible','imagenOculta')
-            // animal2.classList.replace('imagenOculta','imagenVisible')
         }
         if (img1 != '') {
-            movimientos--
-            let mov = document.getElementById('movimientos');
-            mov.innerText = movimientos;
             img2 = animal2.src.slice(35);
                 if (img1 == img2) {
                     img1 = ''
@@ -125,13 +118,13 @@ function compararImagen(params) {
                 }else{
                     img1 = '';
                     img2 = '';
+
+                    movimientos--
+                    let mov = document.getElementById('movimientos');
+                    mov.innerText = movimientos;
+
                     setTimeout(function(){ocultarImagen(oculta1,animal1,oculta2,animal2)},1000)
                     setTimeout(perdedor,1000);
-                    // oculta1.classList.replace('imagenOculta','imagenVisible');
-                    // animal1.classList.replace('imagenVisible','imagenOculta');
-                    // oculta2.classList.replace('imagenOculta','imagenVisible');
-                    // animal2.classList.replace('imagenVisible','imagenOculta');
-                    // console.log('distintas')
                     }
         }else{
             img1 = animal1.src.slice(35)
@@ -206,7 +199,7 @@ function resetPuntaje() {
     let valorMovimientos = document.getElementById('movimientos');
 
     valorPuntos.innerText = '0'
-    valorMovimientos.innerText = '0'
+    valorMovimientos.innerText = '8'
 }
 
 
