@@ -198,6 +198,8 @@ function resetPuntaje() {
     let valorPuntos = document.getElementById('puntaje');
     let valorMovimientos = document.getElementById('movimientos');
 
+    puntaje = 0;
+    movimientos = 8
     valorPuntos.innerText = '0'
     valorMovimientos.innerText = '8'
 }
